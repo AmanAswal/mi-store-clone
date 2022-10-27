@@ -2,6 +2,7 @@ import "./App.css";
 import PreNavbar from "./components/PreNavbar";
 import Navbar from "./components/Navbar";
 import Slider from "./components/Slider"
+import Offers from "./components/Offers";
 
 import {
   BrowserRouter as Router,
@@ -10,15 +11,15 @@ import {
   Link
 } from "react-router-dom";
 
-import data from "./data/data.json"
-const banner = data.banner;
+import data from "./data/data.json";
 
 function App() {
   return (
     <Router>
       <PreNavbar />
       <Navbar />
-      <Slider start={banner.start} />
+      <Slider start={data.banner.start} />
+      <Offers offers={data.offer} />
     </Router>
   );
 }

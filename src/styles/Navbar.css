@@ -22,12 +22,10 @@
 
 #logoImage{
     transition:all 0.2s;
-    
     transform: translateX(-58px);
 }
 
 #logoImage:hover{
-  
     transform: translateX(0);
 }
 

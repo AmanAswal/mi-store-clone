@@ -4,16 +4,18 @@ import Navbar from "./components/Navbar";
 import Slider from "./components/Slider"
 import Offers from "./components/Offers";
 import Heading from "./components/Heading";
+import HotAccessories from "./components/HotAccessories";
+import StarProducts from "./components/StarProducts";
+import HotAccessoriesMenu from "./components/HotAccessoriesMenu";
 
 import {
   BrowserRouter as Router,
-  // Switch,
-  // Route,
+  Route,
+  Routes,
   // Link
 } from "react-router-dom";
 
 import data from "./data/data.json";
-import StarProducts from "./components/StarProducts";
 
 function App() {
   return (
@@ -22,9 +24,24 @@ function App() {
       <Navbar />
       <Slider start={data.banner.start} />
       <Offers offers={data.offer} />
-      <Heading text= "STAR PRODUCTS" />
+      <Heading text="STAR PRODUCTS" />
       <StarProducts starProduct={data.starProduct} />
-      <Heading text= "HOT ACCESSORIES" />
+      <Heading text="HOT ACCESSORIES" />
+      <HotAccessoriesMenu />
+
+      <Routes>
+        
+        <Route exact path="/music" element={<HotAccessories music={data.hotAccessories.music} musicCover={data.hotAccessoriesCover.music} />} />
+
+        <Route exact path="/smartDevice" element={<HotAccessories smartDevice={data.hotAccessories.smartDevice} smartDeviceCover={data.hotAccessoriesCover.smartDevice} />} />
+
+        <Route exact path="/home" element={<HotAccessories home={data.hotAccessories.home} homeCover={data.hotAccessoriesCover.home} />} />
+        
+        <Route exact path="/lifestyle" element={<HotAccessories lifeStyle={data.hotAccessories.lifeStyle} lifeStyleCover={data.hotAccessoriesCover.lifeStyle} />} />
+        
+        <Route exact path="/mobileAccessories" element={<HotAccessories mobileAccessories={data.hotAccessories.mobileAccessories} mobileAccessoriesCover={data.hotAccessoriesCover.mobileAccessories} />} />
+      
+      </Routes>
     </Router>
   );
 }

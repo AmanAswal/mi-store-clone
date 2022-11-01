@@ -8,6 +8,7 @@ import HotAccessories from "./components/HotAccessories";
 import StarProducts from "./components/StarProducts";
 import HotAccessoriesMenu from "./components/HotAccessoriesMenu";
 import ProductReviews from "./components/ProductReviews";
+import Videos from "./components/Videos";
 
 import {
   BrowserRouter as Router,
@@ -47,7 +48,10 @@ function App() {
       <Heading text="PRODUCT REVIEWS" />
       <ProductReviews productReviews={data.productReviews} />
 
+      <Heading text="VIDEO" />
+      <Videos videos={data.videos} />
 
+      <Heading text="IN THE PRESS" />
     </Router>
   );
 }
